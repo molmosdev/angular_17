@@ -26,7 +26,16 @@ export const routes: Routes = [
     ]
   },
   {
-    path: 'about',
-    loadComponent: () => import('./features/about/about.component').then((x) => x.AboutComponent),
+    path: 'info',
+    children: [
+      {
+        path: 'about',
+        loadComponent: () => import('./features/info/about/about.component').then((x) => x.AboutComponent),
+      },
+      {
+        path: 'more-info',
+        loadComponent: () => import('./features/info/more-info/more-info.component').then((x) => x.MoreInfoComponent),
+      }
+    ]
   }
 ];
