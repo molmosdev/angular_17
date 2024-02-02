@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { ViewBARoutes } from './views/view-b-a/view-b-a.routes';
+import { ViewBBRoutes } from './views/view-b-b/view-b-b.routes';
+import { ViewBCRoutes } from './views/view-b-c/view-b-c.routes';
 
 export const FeatureBRoutes: Routes = [
   {
@@ -9,11 +10,15 @@ export const FeatureBRoutes: Routes = [
   },
   {
     path: 'view-b-a',
-    loadComponent: () => import('./views/view-b-a/view-b-a.component').then((x) => x.ViewBAComponent),
-    children: ViewBARoutes
+    loadComponent: () => import('./views/view-b-a/view-b-a.component').then((x) => x.ViewBAComponent)
   },
   {
     path: 'view-b-b',
-    loadComponent: () => import('./views/view-b-b/view-b-b.component').then((x) => x.ViewBBComponent)
+    children: ViewBBRoutes
+  },
+  {
+    path: 'view-b-c',
+    loadComponent: () => import('./views/view-b-c/view-b-c.component').then((x) => x.ViewBCComponent),
+    children: ViewBCRoutes
   }
 ];
