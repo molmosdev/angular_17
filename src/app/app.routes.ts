@@ -1,41 +1,25 @@
 import { Routes } from '@angular/router';
+import { FeatureBRoutes } from './features/feature-b/feature-b.routes';
+import { FeatureCRoutes } from './features/feature-c/feature-c.routes';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'feature-a',
     pathMatch: 'full'
   },
   {
-    path: 'home',
-    loadComponent: () => import('./features/home/home.component').then((x) => x.HomeComponent),
-    children: [
-      {
-        path: '',
-        redirectTo: 'data',
-        pathMatch: 'full'
-      },
-      {
-        path: 'data',
-        loadComponent: () => import('./features/home/pages/data/data.component').then((x) => x.DataComponent)
-      },
-      {
-        path: 'user',
-        loadComponent: () => import('./features/home/pages/user/user.component').then((x) => x.UserComponent)
-      }
-    ]
+    path: 'feature-a',
+    loadComponent: () => import('./features/feature-a/feature-a.component').then((x) => x.FeatureAComponent),
   },
   {
-    path: 'info',
-    children: [
-      {
-        path: 'about',
-        loadComponent: () => import('./features/info/about/about.component').then((x) => x.AboutComponent),
-      },
-      {
-        path: 'more-info',
-        loadComponent: () => import('./features/info/more-info/more-info.component').then((x) => x.MoreInfoComponent),
-      }
-    ]
+    path: 'feature-b',
+    children: FeatureBRoutes
+  },
+  {
+    path: 'feature-c',
+    loadComponent: () => import('./features/feature-c/feature-c.component').then((x) => x.FeatureCComponent),
+    children: FeatureCRoutes
   }
 ];
+

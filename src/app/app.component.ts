@@ -8,7 +8,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
   standalone: true,
   imports: [CommonModule, RouterOutlet, NavbarComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'test';
