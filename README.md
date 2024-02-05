@@ -1,5 +1,7 @@
 # Files
-All the tools follow the same Angular 17 structure. Inside the app folder, the entry point of the application, we have different principal folders:
+All the tools follow the same Angular 17 structure.
+
+Inside the app folder, the entry point of the application, we have different principal folders:
 
 ```text
 src
@@ -23,7 +25,7 @@ src
 │   │       └── index.ts
 │   ├── features
 │   │   ├── feature-a (simple feature component)
-│   │   │   └── feature-a [html, css, ts component files]
+│   │   │   └── feature-a [html, scss, ts component files]
 │   │   ├── feature-b (feature with nested pages)
 │   │   │   ├── shared
 │   │   │   │   ├── constants
@@ -42,7 +44,7 @@ src
 │   │   │   │       └── index.ts
 │   │   │   ├── pages
 │   │   │   │   ├── page-b-a (simple page component)
-│   │   │   │   │    └── page-b-a [html, css, ts component files]
+│   │   │   │   │    └── page-b-a [html, scss, ts component files]
 │   │   │   │   ├── page-b-b (page with nested pages)
 │   │   │   │   │   ├── shared
 │   │   │   │   │   │   └── ...
@@ -54,7 +56,7 @@ src
 │   │   │   │       │   └── ...
 │   │   │   │       ├── pages
 │   │   │   │       │   └── ...
-│   │   │   │       ├── page-b-c [html, css, ts component files]
+│   │   │   │       ├── page-b-c [html, scss, ts component files]
 │   │   │   │       └── page-b-c.routes.ts
 │   │   │   └── feature-b.routes.ts
 │   │   ├── feature-c (feature component with nested pages)
@@ -62,18 +64,22 @@ src
 │   │   │   │   └── ...
 │   │   │   ├── pages
 │   │   │   │   └── ...
-│   │   │   ├── feature-c [html, css, ts component files]
+│   │   │   ├── feature-c [html, scss, ts component files]
 │   │   │   └── feature-c.routes.ts
 │   ├── shared
-│   ├── app [html, css, ts component files]
+│   ├── app [html, scss, ts component files]
 │   ├── app.config.ts
 │   ├── app.routes.ts
 │   └── styles
-│       ├── _colors.css
-│       └── _sizes.css
+│       ├── _colors.scss
+│       └── _sizes.scss
 ├── assets
 └── main.ts
 ```
+
+
+Explore [this demo](https://github.com/marcolmosdev/angular_17) project for a preview of the code in action. 🚀
+
 
 * `app`:  
   This is the root directory of your application.
@@ -378,6 +384,3 @@ In this example, `actionExample` is an event that the component can emit. Replac
         // Code to execute if the expression doesn't match any case
 }
 ```
-
-
-
