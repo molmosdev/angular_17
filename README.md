@@ -24,7 +24,7 @@ src
 │   ├── features
 │   │   ├── feature-a (simple feature component)
 │   │   │   └── feature-a [html, css, ts component files]
-│   │   ├── feature-b (feature with nested views)
+│   │   ├── feature-b (feature with nested pages)
 │   │   │   ├── shared
 │   │   │   │   ├── constants
 │   │   │   │   │   └── index.ts
@@ -40,27 +40,27 @@ src
 │   │   │   │   │   └── index.ts
 │   │   │   │   └── store
 │   │   │   │       └── index.ts
-│   │   │   ├── views
-│   │   │   │   ├── view-b-a (simple view component)
-│   │   │   │   │    └── view-b-a [html, css, ts component files]
-│   │   │   │   ├── view-b-b (view with nested views)
+│   │   │   ├── pages
+│   │   │   │   ├── page-b-a (simple page component)
+│   │   │   │   │    └── page-b-a [html, css, ts component files]
+│   │   │   │   ├── page-b-b (page with nested pages)
 │   │   │   │   │   ├── shared
 │   │   │   │   │   │   └── ...
-│   │   │   │   │   ├── views
+│   │   │   │   │   ├── pages
 │   │   │   │   │   │   └── ...
-│   │   │   │   │   └── view-b-b.routes.ts
-│   │   │   │   └── view-b-c (view component with nested views)
+│   │   │   │   │   └── page-b-b.routes.ts
+│   │   │   │   └── page-b-c (page component with nested pages)
 │   │   │   │       ├── shared
 │   │   │   │       │   └── ...
-│   │   │   │       ├── views
+│   │   │   │       ├── pages
 │   │   │   │       │   └── ...
-│   │   │   │       ├── view-b-c [html, css, ts component files]
-│   │   │   │       └── view-b-c.routes.ts
+│   │   │   │       ├── page-b-c [html, css, ts component files]
+│   │   │   │       └── page-b-c.routes.ts
 │   │   │   └── feature-b.routes.ts
-│   │   ├── feature-c (feature component with nested views)
+│   │   ├── feature-c (feature component with nested pages)
 │   │   │   ├── shared
 │   │   │   │   └── ...
-│   │   │   ├── views
+│   │   │   ├── pages
 │   │   │   │   └── ...
 │   │   │   ├── feature-c [html, css, ts component files]
 │   │   │   └── feature-c.routes.ts
@@ -89,23 +89,23 @@ src
         * `simple feature component`:  
           This is a significant part of your application. It could be a complete section like a dashboard, a user profile,  a settings page, etc.
 
-        * `feature with nested views`:  
-          This means that a feature can be composed entirely of nested views without a root component. Nested views are sub-views that are used for creating more complex UI structures.
+        * `feature with nested pages`:  
+          This means that a feature can be composed entirely of nested pages without a root component. Nested pages are sub-pages that are used for creating more complex UI structures.
 
-        * `feature component with nested views`:  
-          This is a combination of the above two. The feature has a root component and also contains nested views.
+        * `feature component with nested pages`:  
+          This is a combination of the above two. The feature has a root component and also contains nested pages.
 
-      In the last two cases (`feature with nested views` and `feature component with nested views`), `views` are used. In that case, the feature may contain its own `shared` directory, `views` directory and `.routes.ts` file where the views paths are defined. `views` directory contains the different views for a feature. Each view in your application can be one of the following:
-        * `simple view component`:  
-          This is a standalone view in your application. It could be a specific part of a feature like a user list, a detail panel, etc.
+      In the last two cases (`feature with nested pages` and `feature component with nested pages`), `pages` are used. In that case, the feature may contain its own `shared` directory, `pages` directory and `.routes.ts` file where the pages paths are defined. `pages` directory contains the different pages for a feature. Each page in your application can be one of the following:
+        * `simple page component`:  
+          This is a standalone page in your application. It could be a specific part of a feature like a user list, a detail panel, etc.
 
-        * `view with nested views`:  
-          This means that a view can be composed entirely of nested views without a root component. Nested views are sub-views that are used for creating more complex UI structures.
+        * `page with nested pages`:  
+          This means that a page can be composed entirely of nested pages without a root component. Nested pages are sub-pages that are used for creating more complex UI structures.
 
-        * `view component with nested views`:  
-          This is a combination of the above two. The view has a root component and also contains nested views.
+        * `page component with nested pages`:  
+          This is a combination of the above two. The page has a root component and also contains nested pages.
 
-      In the case of `view with nested views` and `view component with nested views`, each view may contain its own `shared` directory, nested `views` directory and `.routes.ts` file. The term nested views refers to the concept of having views within views. This is a powerful feature that allows developers to create complex UI structures while keeping the code organized and maintainable. The decision to use nested views is entirely up to the developer and depends on the specific requirements of the application.
+      In the case of `page with nested pages` and `page component with nested pages`, each page may contain its own `shared` directory, nested `pages` directory and `.routes.ts` file. The term nested pages refers to the concept of having pages within pages. This is a powerful feature that allows developers to create complex UI structures while keeping the code organized and maintainable. The decision to use nested pages is entirely up to the developer and depends on the specific requirements of the application.
 * `shared`:  
   This directory contains components, services, and other code that is shared across multiple features of your application.
 * `styles`:  
@@ -164,69 +164,69 @@ export const routes: Routes = [
 ### feature-b.routes.ts
 ```ts
 import { Routes } from '@angular/router';
-import { ViewBBRoutes } from './views/view-b-b/view-b-b.routes';
-import { ViewBCRoutes } from './views/view-b-c/view-b-c.routes';
+import { PageBBRoutes } from './pages/page-b-b/page-b-b.routes';
+import { PageBCRoutes } from './pages/page-b-c/page-b-c.routes';
 
 export const FeatureBRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'view-b-a',
+    redirectTo: 'page-b-a',
     pathMatch: 'full'
   },
   {
-    path: 'view-b-a',
-    loadComponent: () => import('./views/view-b-a/view-b-a.component').then((x) => x.ViewBAComponent)
+    path: 'page-b-a',
+    loadComponent: () => import('./pages/page-b-a/page-b-a.component').then((x) => x.PageBAComponent)
   },
   {
-    path: 'view-b-b',
-    children: ViewBBRoutes
+    path: 'page-b-b',
+    children: PageBBRoutes
   },
   {
-    path: 'view-b-c',
-    loadComponent: () => import('./views/view-b-c/view-b-c.component').then((x) => x.ViewBCComponent),
-    children: ViewBCRoutes
+    path: 'page-b-c',
+    loadComponent: () => import('./pages/page-b-c/page-b-c.component').then((x) => x.PageBCComponent),
+    children: PageBCRoutes
   }
 ];
 ```
 
-### view-b-b.routes.ts
+### page-b-b.routes.ts
 ```ts
 import { Routes } from '@angular/router';
 
-export const ViewBBRoutes: Routes = [
+export const PageBBRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'view-b-b-a',
+    redirectTo: 'page-b-b-a',
     pathMatch: 'full'
   },
   {
-    path: 'view-b-b-a',
-    loadComponent: () => import('./views/view-b-b-a/view-b-b-a.component').then((x) => x.ViewBBAComponent)
+    path: 'page-b-b-a',
+    loadComponent: () => import('./pages/page-b-b-a/page-b-b-a.component').then((x) => x.PageBBAComponent)
   },
   {
-    path: 'view-b-b-b',
-    loadComponent: () => import('./views/view-b-b-b/view-b-b-b.component').then((x) => x.ViewBBBComponent)
+    path: 'page-b-b-b',
+    loadComponent: () => import('./pages/page-b-b-b/page-b-b-b.component').then((x) => x.PageBBBComponent)
   }
 ];
 ```
 
-### view-b-c.routes.ts
+### page-b-c.routes.ts
 ```ts
 import { Routes } from '@angular/router';
 
-export const ViewBCRoutes: Routes = [
+export const PageBCRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'view-b-c-a',
+    redirectTo: 'page-b-c-a',
     pathMatch: 'full'
   },
   {
-    path: 'view-b-c-a',
-    loadComponent: () => import('./views/view-b-c-a/view-b-c-a.component').then((x) => x.ViewBCAComponent)
+    path: 'page-b-c-a',
+    loadComponent: () => import('./pages/page-b-c-a/page-b-c-a.component').then((x) => x.PageBCAComponent)
   },
   {
-    path: 'view-b-c-b',
-    loadComponent: () => import('./views/view-b-c-b/view-b-c-b.component').then((x) => x.ViewBCBComponent)
+    path: 'page-b-c-b',
+    loadComponent: () => import('./pages/page-b-c-b/page-b-c-b.component').then((x) => x.PageBCBComponent)
   }
 ];
 ```
@@ -238,16 +238,16 @@ import { Routes } from '@angular/router';
 export const FeatureCRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'view-c-a',
+    redirectTo: 'page-c-a',
     pathMatch: 'full'
   },
   {
-    path: 'view-c-a',
-    loadComponent: () => import('./views/view-c-a/view-c-a.component').then((x) => x.ViewCAComponent)
+    path: 'page-c-a',
+    loadComponent: () => import('./pages/page-c-a/page-c-a.component').then((x) => x.PageCAComponent)
   },
   {
-    path: 'view-c-b',
-    loadComponent: () => import('./views/view-c-b/view-c-b.component').then((x) => x.ViewCBComponent)
+    path: 'page-c-b',
+    loadComponent: () => import('./pages/page-c-b/page-c-b.component').then((x) => x.PageCBComponent)
   }
 ];
 ```
