@@ -8,10 +8,10 @@ export const PageBCRoutes: Routes = [
   },
   {
     path: 'page-b-c-a',
-    loadComponent: () => import('./pages/page-b-c-a/page-b-c-a.component').then((x) => x.PageBCAComponent)
+    loadComponent: () => import('./page-b-c-a/page-b-c-a.component')
   },
   {
     path: 'page-b-c-b',
-    loadComponent: () => import('./pages/page-b-c-b/page-b-c-b.component').then((x) => x.PageBCBComponent)
+    loadComponent: () => import('./page-b-c-b/page-b-c-b.component')
   }
 ];

@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { PageBCRoutes } from './pages/page-b-c/page-b-c.routes';
-import { PageBBRoutes } from './pages/page-b-b/page-b-b.routes';
+import { PageBCRoutes } from './page-b-c/page-b-c.routes';
+import { PageBBRoutes } from './page-b-b/page-b-b.routes';
 
 export const FeatureBRoutes: Routes = [
   {
@@ -10,7 +10,7 @@ export const FeatureBRoutes: Routes = [
   },
   {
     path: 'page-b-a',
-    loadComponent: () => import('./pages/page-b-a/page-b-a.component').then((x) => x.PageBAComponent)
+    loadComponent: () => import('./page-b-a/page-b-a.component')
   },
   {
     path: 'page-b-b',
@@ -18,7 +18,7 @@ export const FeatureBRoutes: Routes = [
   },
   {
     path: 'page-b-c',
-    loadComponent: () => import('./pages/page-b-c/page-b-c.component').then((x) => x.PageBCComponent),
+    loadComponent: () => import('./page-b-c/page-b-c.component'),
     children: PageBCRoutes
   }
 ];

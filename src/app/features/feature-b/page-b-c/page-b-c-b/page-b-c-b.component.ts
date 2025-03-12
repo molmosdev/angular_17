@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Example3Component } from '../../shared/components/example-3/example-3.component';
+import { Example3Component } from '../shared/components/example-3/example-3.component';
 
 @Component({
   selector: 'app-page-b-c-b',
@@ -13,6 +13,6 @@ import { Example3Component } from '../../shared/components/example-3/example-3.c
     class: 'box',
   },
 })
-export class PageBCBComponent {
+export default class PageBCBComponent {
 
 }

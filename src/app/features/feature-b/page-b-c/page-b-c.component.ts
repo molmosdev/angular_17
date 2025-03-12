@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ExampleComponent } from '../../shared/components/example/example.component';
+import { ExampleComponent } from '../shared/components/example/example.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
 
@@ -17,6 +17,6 @@ import { RouterOutlet } from '@angular/router';
     class: 'box',
   },
 })
-export class PageBCComponent {
+export default class PageBCComponent {
 
 }

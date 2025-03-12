@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './page-c-b.component.html',
   styleUrl: './page-c-b.component.css'
 })
-export class PageCBComponent {
+export default class PageCBComponent {
 
 }

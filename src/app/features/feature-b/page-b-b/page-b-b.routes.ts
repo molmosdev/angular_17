@@ -8,10 +8,10 @@ export const PageBBRoutes: Routes = [
   },
   {
     path: 'page-b-b-a',
-    loadComponent: () => import('./pages/page-b-b-a/page-b-b-a.component').then((x) => x.PageBBAComponent)
+    loadComponent: () => import('./page-b-b-a/page-b-b-a.component')
   },
   {
     path: 'page-b-b-b',
-    loadComponent: () => import('./pages/page-b-b-b/page-b-b-b.component').then((x) => x.PageBBBComponent)
+    loadComponent: () => import('./page-b-b-b/page-b-b-b.component')
   }
 ];

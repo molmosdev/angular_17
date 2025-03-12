@@ -8,10 +8,10 @@ export const FeatureCRoutes: Routes = [
   },
   {
     path: 'page-c-a',
-    loadComponent: () => import('./pages/page-c-a/page-c-a.component').then((x) => x.PageCAComponent)
+    loadComponent: () => import('./page-c-a/page-c-a.component')
   },
   {
     path: 'page-c-b',
-    loadComponent: () => import('./pages/page-c-b/page-c-b.component').then((x) => x.PageCBComponent)
+    loadComponent: () => import('./page-c-b/page-c-b.component')
   }
 ];
