@@ -12,7 +12,10 @@ import { RouterOutlet } from '@angular/router';
     RouterOutlet
   ],
   templateUrl: './page-b-c.component.html',
-  styleUrl: './page-b-c.component.css'
+  styleUrl: './page-b-c.component.css',
+  host: {
+    class: 'box',
+  },
 })
 export class PageBCComponent {
 

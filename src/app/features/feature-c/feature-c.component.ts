@@ -10,7 +10,10 @@ import { RouterOutlet } from '@angular/router';
     RouterOutlet
   ],
   templateUrl: './feature-c.component.html',
-  styleUrl: './feature-c.component.css'
+  styleUrl: './feature-c.component.css',
+  host: {
+    class: 'box',
+  },
 })
 export class FeatureCComponent {
 

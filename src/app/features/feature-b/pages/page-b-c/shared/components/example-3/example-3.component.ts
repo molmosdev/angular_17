@@ -5,7 +5,10 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './example-3.component.html',
-  styleUrl: './example-3.component.css'
+  styleUrl: './example-3.component.css',
+  host: {
+    class: 'box',
+  },
 })
 export class Example3Component {
 

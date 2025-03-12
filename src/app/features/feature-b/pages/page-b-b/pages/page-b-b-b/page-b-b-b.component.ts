@@ -8,7 +8,10 @@ import { Example2Component } from '../../shared/components/example-2/example-2.c
     Example2Component
   ],
   templateUrl: './page-b-b-b.component.html',
-  styleUrl: './page-b-b-b.component.css'
+  styleUrl: './page-b-b-b.component.css',
+  host: {
+    class: 'box',
+  },
 })
 export class PageBBBComponent {
 
