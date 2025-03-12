@@ -4,7 +4,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'view-page-b-c',
+  selector: 'view-b-c',
   standalone: true,
   imports: [
     ExampleComponent,
