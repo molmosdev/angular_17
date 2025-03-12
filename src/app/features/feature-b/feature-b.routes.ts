@@ -1,24 +1,24 @@
 import { Routes } from '@angular/router';
-import { PageBCRoutes } from './page-b-c/page-b-c.routes';
-import { PageBBRoutes } from './page-b-b/page-b-b.routes';
+import { ViewBCRoutes } from './view-b-c/view-b-c.routes';
+import { ViewBBRoutes } from './view-b-b/view-b-b.routes';
 
 export const FeatureBRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'page-b-a',
+    redirectTo: 'view-b-a',
     pathMatch: 'full'
   },
   {
-    path: 'page-b-a',
-    loadComponent: () => import('./page-b-a/page-b-a.component')
+    path: 'view-b-a',
+    loadComponent: () => import('./view-b-a/view-b-a.component')
   },
   {
-    path: 'page-b-b',
-    children: PageBBRoutes
+    path: 'view-b-b',
+    children: ViewBBRoutes
   },
   {
-    path: 'page-b-c',
-    loadComponent: () => import('./page-b-c/page-b-c.component'),
-    children: PageBCRoutes
+    path: 'view-b-c',
+    loadComponent: () => import('./view-b-c/view-b-c.component'),
+    children: ViewBCRoutes
   }
 ];

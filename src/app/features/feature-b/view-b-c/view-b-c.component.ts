@@ -4,19 +4,19 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-page-b-c',
+  selector: 'view-page-b-c',
   standalone: true,
   imports: [
     ExampleComponent,
     NavbarComponent,
     RouterOutlet
   ],
-  templateUrl: './page-b-c.component.html',
-  styleUrl: './page-b-c.component.css',
+  templateUrl: './view-b-c.component.html',
+  styleUrl: './view-b-c.component.css',
   host: {
     class: 'box',
   },
 })
-export default class PageBCComponent {
+export default class ViewBCComponent {
 
 }

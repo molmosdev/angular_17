@@ -2,17 +2,17 @@ import { Component } from '@angular/core';
 import { Example2Component } from '../shared/components/example-2/example-2.component';
 
 @Component({
-  selector: 'app-page-b-b-b',
+  selector: 'app-view-b-b-b',
   standalone: true,
   imports: [
     Example2Component
   ],
-  templateUrl: './page-b-b-b.component.html',
-  styleUrl: './page-b-b-b.component.css',
+  templateUrl: './view-b-b-b.component.html',
+  styleUrl: './view-b-b-b.component.css',
   host: {
     class: 'box',
   },
 })
-export default class PageBBBComponent {
+export default class ViewBBBComponent {
 
 }
